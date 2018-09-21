@@ -50,12 +50,16 @@ int main() {
 				if((numeros[i]>entrada)||(numeros[i]==entrada) ){  
 					//Recorrer los datos a la derecha
 					for(tamArrAux=tamArr;tamArrAux>i;tamArrAux--){  
-						numeros[tamArrAux] = numeros[tamArrAux-1];
+						numeros[tamArrAux] = numeros[tamArrAux-1]; //Poner el anterior en uno siguiente
 					}
 					numeros[i]=entrada;  //Asignar el valor en su posicion
 					i=tamArr; //Forzar el termino del ciclo
+				} 
+				//Verificar si el numero entrante es mayor que el actual y el siguiente es 0 para validarlo
+				  else if( (entrada>numeros[i])&& (numeros[i+1]==0) ){  
+					numeros[i+1]=entrada;  //Asignacion del nuevo numero en una nueva posicion
+					i=tamArr; //Forzar el termino del ciclo
 				}
-				
 			}
 			
 		//Imrpesion de salida
@@ -94,11 +98,10 @@ int main() {
 						cout<<"\nIngrese un valor valido\n";
 				}
 			}
-			
 	}while(insert==true);
 	
 	//Salida
-	cout<<"\n\n\nIsmael Flores Melendez\nAlgoritmo de Inserccion\n\n";
-	system("pause");
-	return 0;
+		cout<<"\n\n\nIsmael Flores Melendez\nAlgoritmo de Inserccion\n\n";
+		system("pause");
+		return 0;
 }
